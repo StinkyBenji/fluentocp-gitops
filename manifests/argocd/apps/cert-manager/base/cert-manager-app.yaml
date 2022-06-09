@@ -10,7 +10,7 @@ spec:
   source:
     path: manifests/configs/cert-manager/base/
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
-    targetRevision: master
+    targetRevision: main
   syncPolicy:
     automated:
       prune: false

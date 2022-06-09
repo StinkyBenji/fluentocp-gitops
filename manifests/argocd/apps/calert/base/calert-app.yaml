@@ -10,7 +10,7 @@ spec:
   source:
     path: manifests/argocd/apps/calert/base/apps
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
-    targetRevision: master
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true

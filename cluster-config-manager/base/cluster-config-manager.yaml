@@ -11,4 +11,4 @@ spec:
   source:
     path: manifests/argocd/project/cluster-apps/base
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
-    targetRevision: master
+    targetRevision: main

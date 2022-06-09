@@ -10,7 +10,7 @@ spec:
   source:
     path: manifests/configs/oauth/overlays
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
-    targetRevision: master
+    targetRevision: main
   syncPolicy:
     automated:
       prune: false

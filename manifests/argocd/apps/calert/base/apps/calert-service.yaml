@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: calert
+  labels:
+    app.kubernetes.io/instance: calert
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  selector:
+    app: calert

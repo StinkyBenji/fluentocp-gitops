@@ -1,0 +1,42 @@
+kind: Deployment
+apiVersion: apps/v1 
+metadata:
+  name: calert
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calert
+  template:
+    metadata:
+      labels:
+        app: calert
+        deploymentconfig: calert
+    spec:
+      serviceAccount: default
+      restartPolicy: Always
+      enableServiceLinks: true
+      serviceAccountName: default
+      volumes:
+        - name: calert-config
+          configMap:
+            name: calert-config
+            defaultMode: 420
+      containers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: calert
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: calert-config
+              mountPath: /config
+          terminationMessagePolicy: File
+          envFrom:
+            - secretRef:
+                name: calert-secret
+          image: ghcr.io/mr-karan/calert:latest
+          args:
+            - '--config=/config/calert-config.toml' 

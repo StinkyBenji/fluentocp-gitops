@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: fluentocp-wildcard-cert
+  namespace: openshift-ingress
+spec:
+  duration: 1440h0m0s
+  renewBefore: 360h0m0s
+  commonName: '*.apps.fluentocp.wrhammers.casa'
+  dnsNames:
+    - '*.apps.fluentocp.wrhammers.casa'
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  secretName: fluentocp-wildcard-cert

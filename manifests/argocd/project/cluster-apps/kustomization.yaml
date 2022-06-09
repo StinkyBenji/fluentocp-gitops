@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../../../apps/sealed-secrets/base
+  - ../../../apps/oauth/base
+  - ../../../apps/cert-manager/base
+  - ../../../apps/calert/base
+  
+resources:
+  - cluster-apps.yaml
+
+  

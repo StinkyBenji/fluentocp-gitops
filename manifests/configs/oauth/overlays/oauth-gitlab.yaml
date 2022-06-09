@@ -1,0 +1,11 @@
+- op: add
+  path: /spec/identityProviders/-
+  value:
+    gitlab:
+      clientID: 06d8926a20d3cf9c98bfed312d900bad1dd266053df04d4edd48dd36f81ee2cd
+      clientSecret:
+        name: gitlab-secret
+      url: 'https://gitlab.consulting.redhat.com'
+    mappingMethod: claim
+    name: gitlabidp
+    type: GitLab

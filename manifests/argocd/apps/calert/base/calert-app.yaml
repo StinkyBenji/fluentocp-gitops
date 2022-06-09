@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: calert
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: cluster-config
+  source:
+    path: manifests/argocd/apps/calert/base/apps
+    repoURL: https://github.com/StinkyBenji/fluentocp-gitops
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false

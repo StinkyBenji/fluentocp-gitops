@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: fluentocp-api-certificate
+  namespace: openshift-config
+spec:
+  duration: 1440h0m0s
+  renewBefore: 360h0m0s
+  dnsNames:
+    - 'api.fluentocp.wrhammers.casa'
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  secretName: fluentocp-api-certificate

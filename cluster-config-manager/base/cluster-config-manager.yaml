@@ -9,6 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/argocd/project/cluster-apps
+    path: manifests/argocd/project/cluster-apps/base
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
     targetRevision: main

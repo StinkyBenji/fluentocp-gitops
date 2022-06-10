@@ -4,7 +4,7 @@ metadata:
   name: cert-manager-webhook
 spec:
   destination:
-    namespace: openshift-cert-manager
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
@@ -12,8 +12,6 @@ spec:
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
     targetRevision: main
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       prune: false
       selfHeal: false

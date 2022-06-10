@@ -11,12 +11,13 @@ spec:
     helm:
       values: |
         certManager:
-          namespace: openshift-cert-manager
+          namespace: cert-manager-webhook
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: openshift-cert-manager
+    namespace: cert-manager-webhook
   syncPolicy:
     automated:
       prune: false
       selfHeal: false
-  
+    syncOptions:
+      - CreateNamespace=true

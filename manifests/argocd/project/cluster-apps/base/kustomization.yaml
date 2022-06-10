@@ -6,6 +6,7 @@ bases:
   - ../../../apps/oauth/base
   - ../../../apps/cert-manager/base
   - ../../../apps/calert/base
+  - ../../../apps/alertmanager/base
   
 resources:
   - cluster-apps.yaml

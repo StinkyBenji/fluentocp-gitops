@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-webhook-hetzner
+spec:
+  project: cluster-config
+  source:
+    path: deploy/cert-manager-webhook-hetzner
+    repoURL: https://github.com/vadimkim/cert-manager-webhook-hetzner
+    targetRevision: master
+    helm:
+      values: |
+        certManager:
+          namespace: openshift-cert-manager
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: openshift-cert-manager
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+  

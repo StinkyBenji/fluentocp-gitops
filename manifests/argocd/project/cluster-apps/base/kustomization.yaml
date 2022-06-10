@@ -5,6 +5,7 @@ bases:
   - ../../../apps/sealed-secrets/base
   - ../../../apps/oauth/base
   - ../../../apps/cert-manager/base
+  - ../../../apps/cert-manager-webhook/base
   - ../../../apps/calert/base
   - ../../../apps/alertmanager/base
   

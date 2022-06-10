@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: cert-manager-webhook
 spec:
   destination:
     namespace: openshift-cert-manager
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/configs/cert-manager/base
+    path: manifests/argocd/apps/cert-manager-webhook/base/apps
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
     targetRevision: main
   syncPolicy:

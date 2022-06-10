@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/argocd/apps/cert-manager/base/certmanager-webhook/base
+    path: manifests/argocd/apps/cert-manager/base/cert-manager-webhook/base
     repoURL: https://github.com/StinkyBenji/fluentocp-gitops
     targetRevision: main
   syncPolicy:

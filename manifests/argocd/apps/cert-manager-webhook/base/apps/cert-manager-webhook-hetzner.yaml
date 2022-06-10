@@ -10,6 +10,7 @@ spec:
     targetRevision: master
     helm:
       values: |
+        groupName: fluentocp.wrhammers.casa
         certManager:
           namespace: cert-manager-webhook
   destination:

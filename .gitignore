@@ -1,2 +1,3 @@
 alertmanager-secret.yaml
 alertmanager.yaml
+secret.yaml

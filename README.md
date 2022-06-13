@@ -8,12 +8,14 @@ To apply the app of apps, please run:
 `oc apply -k cluster-config-manager/base`
 
 ## manifests
-There are two parts in the `/manifests`: argo CD apps and appProj defined
+There are two parts in the `/manifests`: ArgoCD apps and appProj defined
 in `/argocd` and configuration files in `/configs` for the OpenShift cluster.
 
 ### argocd
 [sealed-secrets](https://github.com/bitnami-labs/sealed-secrets) is used for encrypting all the secrets that are used for each application.
-All the argocd `Application` (in /apps) are managed by a root app `cluster-config-manager`. If you want to add more applications to 
+All the argocd `Application` (in [/apps](https://github.com/StinkyBenji/fluentocp-gitops/tree/main/manifests/argocd/apps)) are managed by a root app 
+[cluster-config-manager](https://github.com/StinkyBenji/fluentocp-gitops/tree/main/cluster-config-manager/base). 
+If you want to add more applications to 
 the root, you can modify the [kustomization.yaml](https://github.com/StinkyBenji/fluentocp-gitops/blob/main/manifests/argocd/project/cluster-apps/base/kustomization.yaml)
 of the `appProj` cluster-apps (defined in [cluster-apps/base](https://github.com/StinkyBenji/fluentocp-gitops/tree/main/manifests/argocd/project/cluster-apps/base))
 
